@@ -1,0 +1,40 @@
+{
+  "name": "neoui-knockout",
+  "version": "0.0.1",
+  "description": "a knockout components UI warehouse depend on neoui",
+  "main": "dist/neoui-kockout.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iuap-design/neoui-knockout.git"
+  },
+  "keywords": [
+    "neoui",
+    "iuap-design",
+    "knockout",
+    "component",
+    "knockout-component"
+  ],
+  "author": "iuapfed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iuap-design/neoui-knockout/issues"
+  },
+  "homepage": "https://github.com/iuap-design/neoui-knockout#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.13.1",
+    "gulp": "^3.9.1",
+    "html-loader": "^0.4.3",
+    "mocha": "^2.5.3",
+    "raw-loader": "^0.5.1",
+    "version": "^0.1.2",
+    "webpack": "~1.13.1",
+    "webpack-dev-server": "^1.15.1"
+  },
+  "dependencies": {
+    "knockout": "^3.4.0"
+  }
+}
