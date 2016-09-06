@@ -3,7 +3,6 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
-var webpack = require('webpack');
 var Promise = require('promise');
 var git = require('git-rev');
 var file = require('html-wiring');
@@ -87,7 +86,11 @@ function getQuestions() {
 gulp.task('js_build', ['js_clean'], function (done) {
     gulp.src('./src/*.js')
         .pipe(concat('index.js'))
-        .pipe(gulp.dest('neoui-knockout.js'));
+        .pipe(rename('neoui-knockout.js'))
+        .pipe(gulp.dest('./dist'))
+        .on('end', function () {
+           done();
+         });
 });
 
 

@@ -4,7 +4,9 @@
   "description": "a knockout components UI warehouse depend on neoui",
   "main": "dist/neoui-kockout.js",
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "pub": "gulp pub",
+    "product": "gulp js_uglify"
   },
   "repository": {
     "type": "git",
@@ -24,15 +26,28 @@
   },
   "homepage": "https://github.com/iuap-design/neoui-knockout#readme",
   "devDependencies": {
+    "browser-sync": "^2.15.0",
     "chai": "^3.5.0",
+    "colors": "~1.1.2",
+    "console-polyfill": "^0.2.2",
+    "cross-spawn": "~4.0.0",
     "eslint": "^2.13.1",
+    "git-rev": "~0.2.1",
     "gulp": "^3.9.1",
-    "html-loader": "^0.4.3",
+    "gulp-clean": "~0.3.2",
+    "gulp-clean-css": "~2.0.9",
+    "gulp-cleancss": "~0.2.2",
+    "gulp-concat": "~2.6.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "~1.2.2",
+    "gulp-uglify": "~1.5.3",
+    "html-wiring": "^1.2.0",
+    "inquirer": "~1.0.3",
+    "lodash": "^4.13.1",
     "mocha": "^2.5.3",
-    "raw-loader": "^0.5.1",
-    "version": "^0.1.2",
-    "webpack": "~1.13.1",
-    "webpack-dev-server": "^1.15.1"
+    "promise": "~7.1.1",
+    "rimraf": "~2.5.2",
+    "version": "^0.1.2"
   },
   "dependencies": {
     "knockout": "^3.4.0"
