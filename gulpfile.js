@@ -12,6 +12,9 @@ var colors = require('colors/safe');
 var rimraf = require('rimraf');
 var childProcess = require('child_process');
 var path = require('path');
+var folder = require('yargs').argv.folder;
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 // var autoprefix = new LessPluginAutoPrefix({
 //   browsers: ['last 2 versions', 'not ie < 8'],
@@ -79,6 +82,8 @@ function getQuestions() {
   });
 }
 
+
+
 // colors.setTheme({
 //   info: ['bold', 'green'],
 // });
@@ -107,15 +112,28 @@ gulp.task('js_uglify', ['js_build'], function (done) {
 });
 
 
-
-
-
 gulp.task('js_clean', function (done) {
   rimraf('./dist', {}, function () {
     done();
   });
 });
 
+gulp.task('move_toExam', function () {
+    return gulp.src('./dist/neoui-knockout.js')
+        .pipe(gulp.dest('./exmaples/' + folder + '/js'));
+});
+
+
+gulp.task('server', ['move_toExam'], function () {
+    browserSync({
+        server: {
+            baseDir: "./exmaples/" + folder
+        }
+    });
+    gulp.watch('src/' + folder + '/*.js', ['js_build']);
+    gulp.watch('dist/*.js', ['move_toExam']);
+    gulp.watch(['exmaples/js/*.js', 'exmaples/' + folder + '*.js', 'exmaples/' + folder + '*.html'], reload);
+});
 
 gulp.task('pub', ['js_uglify'], function () {
   getQuestions().then(function (questions) {
