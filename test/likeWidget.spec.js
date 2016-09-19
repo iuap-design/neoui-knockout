@@ -1,5 +1,5 @@
-var expect = require('chai').expect;
-var ko = require('knockout');
+var expect = chai.expect();
+
 
 describe('like-widget test', function () {
     function Product(name, rating) {

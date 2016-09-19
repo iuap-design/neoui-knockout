@@ -7,7 +7,7 @@
     "dev": "gulp",
     "pub": "gulp pub",
     "product": "gulp js_uglify",
-    "test": "./node_modules/.bin/mocha-phantomjs /test/index.html --ssl-protocol=any --ignore-ssl-errors=true"
+    "test": "cd test && mocha-phantomjs index.html --ssl-protocol=any --ignore-ssl-errors=true"
   },
   "repository": {
     "type": "git",
